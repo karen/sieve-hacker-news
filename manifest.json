@@ -1,0 +1,23 @@
+{
+    "name": "Sieve",
+    "version": "1.0",
+    "description": "Hide and highlight HN articles based on keywords",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "permissions": [
+        "webNavigation",
+        "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://news.ycombinator.com/*"],
+        "run_at": "document_start",
+        "js": ["src/contentScript.js"]
+      }
+    ],
+    "options_page": "src/options.html"
+}
